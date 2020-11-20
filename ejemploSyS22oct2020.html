@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2020b"><title>Untitled</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.S1 { margin-bottom: 20px; padding-bottom: 4px;  }
+.S2 { margin: 0px; padding: 10px 0px 10px 5px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 700; text-align: start;  }
+.S3 { margin: -1px 0px 0px; padding: 10px 0px 10px 7px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: start;  }
+.S4 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S5 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 0px none rgb(0, 0, 0); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S6 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0px none rgb(0, 0, 0); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S7 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px; padding: 0px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S8 { color: rgb(64, 64, 64); padding: 10px 0px 6px 17px; background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; overflow-x: hidden; line-height: 17.234px;  }
+.S9 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S10 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }</style></head><body><div class = rtcContent><h3  class = 'S0' id = 'H_9D41E98D' ><span>Series de Fourier en Tiempo Continuo</span></h3><div  class = 'S1'><div  class = 'S2'><span style=' font-weight: bold;'>Table of Contents</span></div><div  class = 'S3'><span>    </span><a href = "#H_9D41E98D"><span>Series de Fourier en Tiempo Continuo
+</span></a><a href = "#H_03B4B948"><span>Ejemplo 6.3
+</span></a><a href = "#H_F6599EBF"><span>Ejemplo 6.4</span></a></div></div><div  class = 'S4'><span></span></div><div  class = 'S4'><span>Ejemplo 6.1 desmos</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre;"><span>syms </span><span style="color: rgb(170, 4, 249);">t n pi</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>assume(n,[</span><span style="color: rgb(170, 4, 249);">"positive" "integer"</span><span>])</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>T0=pi;</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>w0=2*pi/T0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre;"><span>a0 = (1/T0)*int(exp(-t/2),t,0,pi);</span></span></div></div><div class="inlineWrapper outputs"><div  class = 'S7'><span style="white-space: pre;"><span>a0 = vpa(a0,3)</span></span></div><div  class = 'S8'><div class="symbolicElement"><div class="embeddedOutputsVariableElement">a0&nbsp;=&nbsp;</div><span class="MathEquation" mathmmlencoding="&amp;lt;math xmlns='http://www.w3.org/1998/Math/MathML' display='block' xmlns:mw='https://www.mathworks.com/MathML/extensions'&amp;gt;
+  &amp;lt;mrow mw:template='plus' mw:dataCategory='structure'&amp;gt;
+    &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+      &amp;lt;mo&amp;gt;-&amp;lt;/mo&amp;gt;
+      &amp;lt;mfrac mw:template='divide' mw:dataCategory='structure'&amp;gt;
+        &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+          &amp;lt;mrow mw:template='times' mw:dataCategory='structure'&amp;gt;
+            &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+              &amp;lt;mn&amp;gt;1.0&amp;lt;/mn&amp;gt;
+              &amp;lt;mo form='infix' mw:dataCategory='static'&amp;gt;&amp;amp;InvisibleTimes;&amp;lt;/mo&amp;gt;
+              &amp;lt;mfenced mw:dataCategory='structure-part'&amp;gt;
+                &amp;lt;mrow mw:template='plus' mw:dataCategory='structure'&amp;gt;
+                  &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+                    &amp;lt;mrow mw:template='times' mw:dataCategory='structure'&amp;gt;
+                      &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+                        &amp;lt;mn&amp;gt;2.0&amp;lt;/mn&amp;gt;
+                        &amp;lt;mo form='infix' mw:dataCategory='static'&amp;gt;&amp;amp;InvisibleTimes;&amp;lt;/mo&amp;gt;
+                        &amp;lt;msup mw:template='exp' mw:dataCategory='structure'&amp;gt;
+                          &amp;lt;mo mw:dataCategory='static'&amp;gt;&amp;amp;ee;&amp;lt;/mo&amp;gt;
+                          &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+                            &amp;lt;mrow mw:template='plus' mw:dataCategory='structure'&amp;gt;
+                              &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+                                &amp;lt;mo&amp;gt;-&amp;lt;/mo&amp;gt;
+                                &amp;lt;mrow mw:template='times' mw:dataCategory='structure'&amp;gt;
+                                  &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+                                    &amp;lt;mn&amp;gt;0.5&amp;lt;/mn&amp;gt;
+                                    &amp;lt;mo form='infix' mw:dataCategory='static'&amp;gt;&amp;amp;InvisibleTimes;&amp;lt;/mo&amp;gt;
+                                    &amp;lt;mi&amp;gt;&amp;amp;pi;&amp;lt;/mi&amp;gt;
+                                  &amp;lt;/mrow&amp;gt;
+                                &amp;lt;/mrow&amp;gt;
+                              &amp;lt;/mrow&amp;gt;
+                            &amp;lt;/mrow&amp;gt;
+                          &amp;lt;/mrow&amp;gt;
+                        &amp;lt;/msup&amp;gt;
+                      &amp;lt;/mrow&amp;gt;
+                    &amp;lt;/mrow&amp;gt;
+                    &amp;lt;mo&amp;gt;-&amp;lt;/mo&amp;gt;
+                    &amp;lt;mn&amp;gt;2.0&amp;lt;/mn&amp;gt;
+                  &amp;lt;/mrow&amp;gt;
+                &amp;lt;/mrow&amp;gt;
+              &amp;lt;/mfenced&amp;gt;
+            &amp;lt;/mrow&amp;gt;
+          &amp;lt;/mrow&amp;gt;
+        &amp;lt;/mrow&amp;gt;
+        &amp;lt;mrow mw:dataCategory='placeholder'&amp;gt;
+          &amp;lt;mi&amp;gt;&amp;amp;pi;&amp;lt;/mi&amp;gt;
+        &amp;lt;/mrow&amp;gt;
+      &amp;lt;/mfrac&amp;gt;
+    &amp;lt;/mrow&amp;gt;
+  &amp;lt;/mrow&amp;gt;
+&amp;lt;/math&amp;gt;
+" style="vertical-align: -15px;"><img src="data:image/png;base64,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" width="143" height="35"></span></div></div></div></div><div  class = 'S9'><span>gt</span></div><div  class = 'S4'><span>fd</span></div><div  class = 'S4'><span>gf</span></div><div  class = 'S4'><span>hy</span></div><div  class = 'S4'><span>j</span></div><div  class = 'S4'><span>dgf</span></div><div  class = 'S4'><span>g</span></div><div  class = 'S4'><span>d</span></div><h2  class = 'S10' id = 'H_03B4B948' ><span>Ejemplo 6.3</span></h2><div  class = 'S4'><span>Partes de una tgrigonométrica y te piden calcular la trigonométrica compacta, el argumento es con traslación sin(x)=cos(x-pi/2) -sin(x) = cos(x-pi/2)</span></div><h2  class = 'S10' id = 'H_F6599EBF' ><span>Ejemplo 6.4</span></h2><div  class = 'S4'><span>Partes de una tgrigonométrica y te piden calcular la trigonométrica compacta, el argumento es con traslación sin(x)=cos(x-pi/2) -sin(x) = cos(x-pi/2)</span></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+% Series de Fourier en Tiempo Continuo
+%% 
+% 
+% 
+% Ejemplo 6.1 desmos
+
+syms t n pi
+assume(n,["positive" "integer"])
+
+T0=pi;
+w0=2*pi/T0;
+
+a0 = (1/T0)*int(exp(-t/2),t,0,pi);
+a0 = vpa(a0,3)
+%% 
+% gt
+% 
+% fd
+% 
+% gf
+% 
+% hy
+% 
+% j
+% 
+% dgf
+% 
+% g
+% 
+% d
+%% Ejemplo 6.3
+% Partes de una tgrigonométrica y te piden calcular la trigonométrica compacta, 
+% el argumento es con traslación sin(x)=cos(x-pi/2) -sin(x) = cos(x-pi/2)
+%% Ejemplo 6.4
+% Partes de una tgrigonométrica y te piden calcular la trigonométrica compacta, 
+% el argumento es con traslación sin(x)=cos(x-pi/2) -sin(x) = cos(x-pi/2)
+##### SOURCE END #####
+--></body></html>
